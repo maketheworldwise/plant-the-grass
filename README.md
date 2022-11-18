@@ -12,7 +12,7 @@
 
 ## Install
 
-Repository를 클론하거나 포크하여 사용하실 수 있습니다.
+Repository를 클론하거나 포크하여 사용하실 수 있습니다. 단, 해당 Repository도 현재 Github Actions가 적용되어 돌아가고 있기 때문에 클론하거나 포크할때 불필요한 파일들까지 포함될 수 있습니다. (`.github/workflows/scheduled.yml` 파일과 `scripts/plant_the_grass.sh` 파일만 가져가셔도 무방합니다)
 
 - Github Clone
 - Github Fork
