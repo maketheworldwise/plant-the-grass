@@ -1,0 +1,29 @@
+name: 1 Day 1 Commit Scheduler
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  plant_the_grass:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ github.repository }}
+          token: ${{ secrets.GH_TOKEN}}
+
+      - name: Run script
+        run: |
+          chmod +x ./scripts/plant_the_grass.sh
+          ./scripts/plant_the_grass.sh
+        shell: bash
+
+      - name: Commit And push
+        run: |
+          git add .
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+          git commit -am "I planted the grass 🌱"
+          git push
